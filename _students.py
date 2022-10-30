@@ -20,7 +20,7 @@ def read_students() -> dict:
             students[student[0]] = dict()
             students[student[0]]['name'] = student[1]
             students[student[0]]['CPF'] = student[2]
-            students[student[0]]['id_course'] = student[3]
+            students[student[0]]['course_id'] = student[3]
 
     return students
 
@@ -85,13 +85,13 @@ def input_student () -> None:
         # Input de variáveis
         name = str(input("Infome o nome do aluno: "))
         cpf = str(input("Informe o CPF do aluno: "))
-        id_course = str(input("Informe o ID do curso: "))
+        course_id = str(input("Informe o ID do curso: "))
 
         #cadastro das variáveis
         students[id] = dict()
         students[id]['name'] = name
         students[id]['cpf'] = cpf
-        students[id]['id_course'] = id_course
+        students[id]['course_id'] = course_id
 
         repet = input("Deseja cadastrar um novo aluno? [y/n] ").upper()
         if (repet != 'Y'):
@@ -118,7 +118,7 @@ def change_student() -> None:
     for key in students.keys():
         if ra == key:
             print('Consegui localizar o aluno ^_^')
-            print(students[key]['name'], '- CPF ' , students[key]['CPF'], '- ID do curso ', students[key]['id_course'])
+            print(students[key]['name'], '- CPF ' , students[key]['CPF'], '- ID do curso ', students[key]['course_id'])
             option = str(input("Qual dado deseja alterar?\nA - Nome\nB - CPF\nC - Curso\nPara desistir aperte outra tecla\n")).upper()
             match option:
                 case 'A':
@@ -126,7 +126,7 @@ def change_student() -> None:
                 case 'B':
                     students[key]['CPF'] = str(input("E qual é o CPF correto deste aluno? "))
                 case 'C':
-                    students[key]['id_course'] = str(input("Me inform o ID do curso em que devo matricula-lo, por favor: "))
+                    students[key]['course_id'] = str(input("Me inform o ID do curso em que devo matricula-lo, por favor: "))
                 case _:
                     print("Poxa, ainda nao consigo antender isso. Por que nao tenta depois? ")
 
@@ -141,4 +141,31 @@ def change_student() -> None:
     if student_located == False:
         print("Perdao, nao consegui localizar este aluno :/")
 
-change_student()
+# =============================================================================
+
+def consult_students() -> None:
+    '''
+    Consultar alunos pelo RA/ID
+    '''
+
+    students = read_students()
+
+    ra = str(input("Informe o RA do aluno que deseja consultar: ")).upper()
+
+    try:
+        print('RA: ', ra, '\nNome: ', students[ra]['name'], '- CPF: ', students[ra]['CPF'], '- ID do curso: ', students[ra]['course_id'])
+    except:
+        print('Desculpe, mas nao encontrei o aluno.')
+
+# =============================================================================
+
+def full_report() -> None:
+    '''
+    Exibe o relatório completo dos alunos
+    '''
+
+    students = read_students()
+
+    for key in students.keys():
+        print('RA: ', key, '\nNome: ', students[key]['name'], '- CPF: ', students[key]['CPF'], '- ID do curso: ', students[key]['course_id'])
+        print('\n')

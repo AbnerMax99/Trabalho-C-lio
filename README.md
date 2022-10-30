@@ -12,18 +12,18 @@ CRUD universitário onde é posssível cadastrar alunos, cursos e suas respectiv
 </div>
 
  - **ALUNOS**
-    - Incluir ✅
+    - ✅ Incluir 
         - RA -> str
         - Nome -> str
         - CPF -> str
         - ID do curso -> str
-    - Alterar ✅
+    - ✅ Alterar 
         - _Busca pelo RA_.
-    - Consultar pelo RA:
+    - ✅ Consultar pelo RA:
         - Exibir dados do aluno;
         - Exibir curso;
         - Exibir disciplinas.
-    - Relátório Completo:
+    - ✅ Relátório Completo:
         - Exibir **todos** os alunos;
         - Exibir seus curso;
         - Exibir suas disciplicas.
