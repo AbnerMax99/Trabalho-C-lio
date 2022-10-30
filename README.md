@@ -12,7 +12,7 @@ CRUOD universitário onde é posssível cadastrar alunos, cursos e suas respecti
 </div>
 
  - **ALUNOS**
-    - Incluir
+    - Incluir ✅
         - RA -> str
         - Nome -> str
         - CPF -> str
