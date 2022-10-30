@@ -1,6 +1,6 @@
 #  CRUD python 
 
-CRUOD universitário onde é posssível cadastrar alunos, cursos e suas respectivas disciplinas. 
+CRUD universitário onde é posssível cadastrar alunos, cursos e suas respectivas disciplinas. 
 
 
 ## Menu
