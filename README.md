@@ -50,4 +50,21 @@ CRUOD universitário onde é posssível cadastrar alunos, cursos e suas respecti
         - Nome;
         - ID do curso.
 
-___
+
+## Estrutura de _files_
+
+Os arquivos em files/ possuem a tafera de armazenar os dados digitados pelo usuário.
+
+<div align='center'>
+
+**A estrutura dos asquivos é a seguinte**
+
+RA   | Nome do Aluno | CPF             | Curso
+-----|---------------|-----------------|--------
+9999 | Fulado de tal | 000.000.000-00  | TI
+
+</div>
+
+Os arquivos possuem extenção _csv_, seus valores são separados por ";".
+
+No coódico, a primera linha será utilizada como índice de linha para os dicionário, já os cabeçalhos são os índices de colunas.

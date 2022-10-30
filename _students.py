@@ -2,38 +2,31 @@ from random import uniform
 
 students = dict()
 
-def read_students() -> dict:
-    '''
-        Lê o arquivo de texto na variável students
-    '''
-
-    number = 0
-
-    with open('files\students.csv') as students_txt:
-        for line in students_txt:
-            students = line
-
-def save_students() -> dict:
+def register_students() -> None:
     '''
         Salva a variável students no arquivo de texto files\students.csv
     '''
 
-    with open('files\students.csv', 'w') as students_txt:
-        for key in students.keys():
-            students_txt.write(str(students[key]))
+    # Line prepara os dados para armazenalos em students.csv
+    line = ''
+
+    with open('files\students.csv', 'a') as students_txt:
+        for row in students.keys():
+            line = row
+
+            for column in students[row].keys():
+                line += ';' + str(students[row][column])
+
+            students_txt.write(str(line +'\n'))
 
 
-def register_student () -> None:
+def input_student () -> None:
     '''
         Cadastrar alunos
     '''
 
-    read_students()
-
     # Variável radomica
-    id = ''
-    while (id in students.keys()) == True:
-        id = int(uniform(1000, 9999))
+    id = str(int(uniform(1000, 9999)))
 
     # Input de variáveis
     name = str(input("Infome o nome do aluno: "))
@@ -46,6 +39,6 @@ def register_student () -> None:
     students[id]['cpf'] = cpf
     students[id]['id_course'] = id_course
 
-    save_students()
+    register_students()
 
-register_student()
+input_student()
