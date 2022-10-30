@@ -18,15 +18,15 @@ def read_students() -> dict:
             student = text_line.split(';')
             
             students[student[0]] = dict()
-            students[student[0]]['Nome'] = student[1]
+            students[student[0]]['name'] = student[1]
             students[student[0]]['CPF'] = student[2]
-            students[student[0]]['Curso'] = student[3]
+            students[student[0]]['id_course'] = student[3]
 
     return students
 
 # =============================================================================
 
-def register_students(students:dict) -> None:
+def register_students(students=dict, mode=str) -> None:
     '''
         Salva o dicionário students no arquivo de texto files\students.csv
     '''
@@ -34,7 +34,7 @@ def register_students(students:dict) -> None:
     # Line prepara os dados para armazenalos em students.csv
     line_for_csv = ''
 
-    with open('files\students.csv', 'a') as students_table:
+    with open('files\students.csv', mode) as students_table:
         for row in students.keys():
             line_for_csv = row
 
@@ -97,9 +97,48 @@ def input_student () -> None:
         if (repet != 'Y'):
             go_repet = False
 
-    register_students(students=students)
+    register_students(students=students, mode='a')
 
 # =============================================================================
 
-input_student()
-print(read_students())
+def change_student() -> None:
+    '''
+    Altera o cadastro de um estudante.
+    '''
+
+    # Verifica se o aluno foi encontrado
+    student_located = False
+
+    # Le a tabela com os dados dos estudantes
+    students = read_students()
+
+    # Recebe o ID/RA do aluno que deverá alterar
+    ra = str(input("Informe o RA do aluno para alterar o cadastro: "))
+
+    for key in students.keys():
+        if ra == key:
+            print('Consegui localizar o aluno ^_^')
+            print(students[key]['name'], '- CPF ' , students[key]['CPF'], '- ID do curso ', students[key]['id_course'])
+            option = str(input("Qual dado deseja alterar?\nA - Nome\nB - CPF\nC - Curso\nPara desistir aperte outra tecla\n")).upper()
+            match option:
+                case 'A':
+                    students[key]['name'] = str(input("Ok, entao me informe o nome correto do aluno, por favor: "))
+                case 'B':
+                    students[key]['CPF'] = str(input("E qual é o CPF correto deste aluno? "))
+                case 'C':
+                    students[key]['id_course'] = str(input("Me inform o ID do curso em que devo matricula-lo, por favor: "))
+                case _:
+                    print("Poxa, ainda nao consigo antender isso. Por que nao tenta depois? ")
+
+            print(students)
+            confirm = str(input("Tem certeza que deseja realizar a alteraçao? [y/n] ")).upper()
+            if confirm == 'Y':
+                register_students(students=students, mode='w')
+
+            student_located = True
+            break
+        
+    if student_located == False:
+        print("Perdao, nao consegui localizar este aluno :/")
+
+change_student()

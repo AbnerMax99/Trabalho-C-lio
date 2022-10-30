@@ -17,7 +17,7 @@ CRUD universitário onde é posssível cadastrar alunos, cursos e suas respectiv
         - Nome -> str
         - CPF -> str
         - ID do curso -> str
-    - Alterar
+    - Alterar ✅
         - _Busca pelo RA_.
     - Consultar pelo RA:
         - Exibir dados do aluno;
