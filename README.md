@@ -1,4 +1,4 @@
-#  CRUD python 
+# <img src="https://media.giphy.com/media/LMt9638dO8dftAjtco/giphy.gif" width="40px"> CRUD for college.
 
 CRUD universitário onde é posssível cadastrar alunos, cursos e suas respectivas disciplinas. 
 
@@ -7,7 +7,7 @@ CRUD universitário onde é posssível cadastrar alunos, cursos e suas respectiv
 
 <div align="center">
 
-**Deverá conter as funções abaixo**
+**CONTÉM AS FUNÇÕES ABAIXO**
 
 </div>
 
