@@ -33,15 +33,15 @@ CRUD universitário onde é possível cadastrar alunos, cursos e suas respectiva
  - **CADASTRO DE CURSOS**
     - Incluir
         - ID -> int
-        - Nome -> str
-        - Duração (semestres) -> int
+        - Nome -> str✅
+        - Duração (semestres) -> int✅
     - Alterar:
         - _Busca pelo ID_
     - Consultar pelo ID:
-        - Exibir dados do curso;
+        - Exibir dados do curso;✅
         - Exibir disciplinas.
     - Relatório: 
-        - Exibir todos os cursos;
+        - Exibir todos os cursos;✅
         - Exibir todas as disciplinas.
     
  - **DISCIPLINAS**
