@@ -1,3 +1,5 @@
+from _students import input_student, change_student, consult_students, full_report, del_studentes
+
 aluno = []
 id_curso = []
 disciplinas = []
@@ -53,25 +55,30 @@ def menu_cursos():
         invalida()
 
 
+# =LEO=========================================================================
+
 def menu_alunos():
     lin()
     print('CADASTRO DE ALUNOS')
     lin()
-    print('Selecione uma opção\na- Incluir\nb- Alterar\nc- Relatório Completo\nd- Excluir Aluno')
+    print('Selecione uma opção\na- Incluir\nb- Alterar\nc- Consultar pelo RA\nd- Relatório Completo\ne- Excluir Aluno')
     selecione = str(input('Opção escolhida: ')).upper()
     if selecione == 'A':
-        print('NADA AINDA')
+        input_student()
     elif selecione == 'B':
-        print('NADA AINDA')
+        change_student()
     elif selecione == 'C':
-        print('NADA AINDA')
+        consult_students()
     elif selecione == 'D':
-        print('NADA AINDA')
+        full_report()
+    elif selecione == 'E':
+        del_studentes()
     else:
         print('OPÇÃO INVÁLIDA')
         lin()
         invalida()
 
+# =============================================================================
 
 def menu_desci():
     lin()

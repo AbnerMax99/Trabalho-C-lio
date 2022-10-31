@@ -1,6 +1,6 @@
 # <img src="https://media.giphy.com/media/LMt9638dO8dftAjtco/giphy.gif" width="40px"> CRUD for college.
 
-CRUD universitário onde é posssível cadastrar alunos, cursos e suas respectivas disciplinas. 
+CRUD universitário onde é possível cadastrar alunos, cursos e suas respectivas disciplinas. 
 
 
 ## Menu
@@ -23,12 +23,12 @@ CRUD universitário onde é posssível cadastrar alunos, cursos e suas respectiv
         - Exibir dados do aluno;
         - Exibir curso;
         - Exibir disciplinas.
-    - ✅ Relátório Completo:
+    - ✅ Relatório Completo:
         - Exibir **todos** os alunos;
         - Exibir seus curso;
-        - Exibir suas disciplicas.
-    - Excluir:
-        - _A busca para exclusão do aluno deverá ser realizda por meio do RA_.
+        - Exibir suas disciplinas.
+    - ✅ Excluir:
+        - _A busca para exclusão do aluno deverá ser realizada por meio do RA_.
 
  - **CADASTRO DE CURSOS**
     - Incluir
@@ -53,18 +53,22 @@ CRUD universitário onde é posssível cadastrar alunos, cursos e suas respectiv
 
 ## Estrutura de _files_
 
-Os arquivos em files/ possuem a tafera de armazenar os dados digitados pelo usuário.
-
-<div align='center'>
+Os arquivos em files/ possuem a tarefa de armazenar os dados digitados pelo usuário.
 
 **A estrutura dos asquivos é a seguinte**
 
+<div align='center'>
+
 RA   | Nome do Aluno | CPF             | Curso
 -----|---------------|-----------------|--------
-9999 | Fulado de tal | 000.000.000-00  | TI
+9999 | Fulano de tal | 000.000.000-00  | TI
 
 </div>
 
-Os arquivos possuem extenção _csv_, seus valores são separados por ";".
+Os arquivos possuem extensão _csv_, seus valores são separados por ";".
 
-No coódico, a primera linha será utilizada como índice de linha para os dicionário, já os cabeçalhos são os índices de colunas.
+No código, a primeira linha será utilizada como índice de linha para os dicionários, já os cabeçalhos são os índices de colunas.
+
+___
+
+Authors: [Leonardo Espindola](https://github.com/HiLeomoreira) | [Abner Max](https://github.com/AbnerMax99)

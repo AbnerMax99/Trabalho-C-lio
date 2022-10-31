@@ -31,7 +31,7 @@ def register_students(students=dict, mode=str) -> None:
         Salva o dicionário students no arquivo de texto files\students.csv
     '''
 
-    # Line prepara os dados para armazenalos em students.csv
+    # Line prepara os dados para armazená-los em students.csv
     line_for_csv = ''
 
     with open('files\students.csv', mode) as students_table:
@@ -53,7 +53,7 @@ def generate_id() -> int:
     # Recebe os estudantes que já foram cadastrados
     students = read_students()
 
-    # Verifica se o id é valido, ou seja, nao é repetido
+    # Verifica se o id é valido, ou seja, não é repetido
     valid_id = False
 
     id = 0
@@ -83,14 +83,14 @@ def input_student () -> None:
         id = str( generate_id() )
 
         # Input de variáveis
-        name = str(input("Infome o nome do aluno: "))
+        name = str(input("Informe o nome do aluno: "))
         cpf = str(input("Informe o CPF do aluno: "))
         course_id = str(input("Informe o ID do curso: "))
 
         #cadastro das variáveis
         students[id] = dict()
         students[id]['name'] = name
-        students[id]['cpf'] = cpf
+        students[id]['CPF'] = cpf
         students[id]['course_id'] = course_id
 
         repet = input("Deseja cadastrar um novo aluno? [y/n] ").upper()
@@ -122,16 +122,16 @@ def change_student() -> None:
             option = str(input("Qual dado deseja alterar?\nA - Nome\nB - CPF\nC - Curso\nPara desistir aperte outra tecla\n")).upper()
             match option:
                 case 'A':
-                    students[key]['name'] = str(input("Ok, entao me informe o nome correto do aluno, por favor: "))
+                    students[key]['name'] = str(input("Ok, então me informe o nome correto do aluno, por favor: "))
                 case 'B':
                     students[key]['CPF'] = str(input("E qual é o CPF correto deste aluno? "))
                 case 'C':
                     students[key]['course_id'] = str(input("Me inform o ID do curso em que devo matricula-lo, por favor: "))
                 case _:
-                    print("Poxa, ainda nao consigo antender isso. Por que nao tenta depois? ")
+                    print("Poxa, ainda não consigo entender isso. Por que não tenta depois? ")
 
             print(students)
-            confirm = str(input("Tem certeza que deseja realizar a alteraçao? [y/n] ")).upper()
+            confirm = str(input("Tem certeza que deseja realizar a alteração? [y/n] ")).upper()
             if confirm == 'Y':
                 register_students(students=students, mode='w')
 
@@ -139,7 +139,7 @@ def change_student() -> None:
             break
         
     if student_located == False:
-        print("Perdao, nao consegui localizar este aluno :/")
+        print("Perdão, não consegui localizar este aluno :/")
 
 # =============================================================================
 
@@ -155,7 +155,7 @@ def consult_students() -> None:
     try:
         print('RA: ', ra, '\nNome: ', students[ra]['name'], '- CPF: ', students[ra]['CPF'], '- ID do curso: ', students[ra]['course_id'])
     except:
-        print('Desculpe, mas nao encontrei o aluno.')
+        print('Desculpe, mas não encontrei o aluno.')
 
 # =============================================================================
 
@@ -169,3 +169,24 @@ def full_report() -> None:
     for key in students.keys():
         print('RA: ', key, '\nNome: ', students[key]['name'], '- CPF: ', students[key]['CPF'], '- ID do curso: ', students[key]['course_id'])
         print('\n')
+
+# =============================================================================
+
+def del_studentes() -> None:
+    '''
+    Deleta um estudante do cadastro
+    '''
+
+    # Lê os estudantes cadastrados
+    students = read_students()
+
+    key = str(input("Informe o RA do estudante que deseja excluir: ")).upper()
+    print('RA: ', key, '\nNome: ', students[key]['name'], '- CPF: ', students[key]['CPF'], '- ID do curso: ', students[key]['course_id'])
+    
+    confirm = str(input('\nTem certeza que deseja excluir o estudante? [y/n] ')).upper()
+    if confirm == 'Y':
+        del students[key]
+        register_students(students=students, mode='w')
+        print('Operação concluída!\n')
+    else:
+        print('Operação cancelada!\n')
