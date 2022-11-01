@@ -31,18 +31,18 @@ CRUD universitário onde é possível cadastrar alunos, cursos e suas respectiva
         - _A busca para exclusão do aluno deverá ser realizada por meio do RA_.
 
  - **CADASTRO DE CURSOS**
-    - Incluir
-        - ID -> int
-        - Nome -> str✅
-        - Duração (semestres) -> int✅
+    - ✅ Incluir
+        - ID -> int ⚠️ - REVISAR
+        - Nome -> str
+        - Duração (semestres) -> int
     - Alterar:
         - _Busca pelo ID_
-    - Consultar pelo ID:
-        - Exibir dados do curso;✅
-        - Exibir disciplinas.
-    - Relatório: 
-        - Exibir todos os cursos;✅
-        - Exibir todas as disciplinas.
+    - ✅ Consultar pelo ID:
+        - Exibir dados do curso;
+        - Exibir disciplinas. ⚠️ - REVISAR
+    - ✅ Relatório: 
+        - Exibir todos os cursos;
+        - Exibir todas as disciplinas. ⚠️ - REVISAR
     
  - **DISCIPLINAS**
     - Incluir:

@@ -60,7 +60,7 @@ def generate_id() -> str:
     # Verifica se o id é valido, ou seja, não é repetido
     valid_id = False
 
-    while( valid_id == False ):
+    while(valid_id == False):
         id = str(choice(ascii_uppercase)) + str(randrange(10000, 99999))
         for key in students.keys():
             if key == id:
@@ -79,7 +79,7 @@ def input_student () -> None:
     students = dict()
     go_repet = True
 
-    while( go_repet == True ):
+    while(go_repet == True):
         
         # Variável radomica
         id = str( generate_id() )
