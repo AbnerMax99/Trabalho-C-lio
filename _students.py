@@ -1,4 +1,5 @@
-from random import uniform
+from random import randrange, choice
+from string import ascii_uppercase
 
 # =============================================================================
 
@@ -45,10 +46,13 @@ def register_students(students=dict, mode=str) -> None:
 
 # =============================================================================
 
-def generate_id() -> int:
+def generate_id() -> str:
     '''
     Gera um RA do tipo inteiro para o estudante
     '''
+
+    # Recebe o resultado da função 
+    id = '0'
 
     # Recebe os estudantes que já foram cadastrados
     students = read_students()
@@ -56,10 +60,8 @@ def generate_id() -> int:
     # Verifica se o id é valido, ou seja, não é repetido
     valid_id = False
 
-    id = 0
-
     while( valid_id == False ):
-        id = int(uniform(1000, 9999))
+        id = str(choice(ascii_uppercase)) + str(randrange(10000, 99999))
         for key in students.keys():
             if key == id:
                 break
