@@ -35,8 +35,8 @@ CRUD universitário onde é possível cadastrar alunos, cursos e suas respectiva
         - ID -> int ⚠️ - REVISAR
         - Nome -> str
         - Duração (semestres) -> int
-    - Alterar:
-        - _Busca pelo ID_
+    - ✅ Alterar:
+        - _Busca pelo ID_ ⚠️ - REVISAR
     - ✅ Consultar pelo ID:
         - Exibir dados do curso;
         - Exibir disciplinas. ⚠️ - REVISAR
