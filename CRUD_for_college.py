@@ -458,12 +458,12 @@ def all_subjects() -> str: #Relatório das disciplinas a qual deve mostrar : Dis
 
     for id_course in subjects.keys():
         for id_subjects in subjects[id_course].keys():
-            print(subjects[id_course][id_subjects])
+            print(id_subjects, ' - ', subjects[id_course][id_subjects])
 
             # Opções de menu
         retorno_menu_secundario = str(input('Deseja voltar ao menu anterior? (S) (N)\n')).upper()
         if retorno_menu_secundario == 'S':
-            return menu_cursos()
+            return menu_disciplinas()
         elif retorno_menu_secundario == 'N':
             retorno_menu_principal = str(input('Deseja voltar ao menu principal? (S) (N)\n')).upper()
             if retorno_menu_principal == 'S':
@@ -488,15 +488,13 @@ def excluir_disciplina() -> None:
         # Localiza o indicador do curso na lista por meio do ID fornecido pelo usuário
         select_curso = course_id.index(int(input('Insira o ID do curso: ')))  #Seleção do curso pelo ID
         print(f'O Curso selecionado foi {curso[select_curso]}')
-        print(subjects[select_curso])
         
-        select_subject = (input('Selecione a disciplina que deseja alterar: ')).upper()
-        index_subject = subjects[select_curso].index(select_subject)
+        id_subject = str((input('Digite a disciplina que deseja alterar: ')))
         try:
-            print(f'Disciplina selecionada foi: {subjects[select_curso][index_subject]}')
+            print(f'Disciplina selecionada foi: {subjects[str(select_curso)][id_subject]}')
             confirm = str(input('Confirmar Exclusão? (S) (N)'))
             if confirm == 'S':
-                subjects[select_curso].pop(index_subject)
+                subjects[str(select_curso)].pop(id_subject)
                 print('Disciplina Excluída com Sucesso!')
             elif confirm == 'N':
                 return menu_disciplinas()
@@ -505,25 +503,25 @@ def excluir_disciplina() -> None:
                 skip_line()
                 invalid_option()
         except:
-            print("Não localizei o curso")
+            print("Não localizei o disciplina")
     except:
-        print("Não localizei a disciplina")
+        print("Não localizei a curso")
 
 
-        # Opções de menu
-        retorno_menu_secundario = str(input('Deseja voltar ao menu anterior? (S) (N)\n')).upper()
-        if retorno_menu_secundario == 'S':
-            return menu_cursos()
-        elif retorno_menu_secundario == 'N':
-            retorno_menu_principal = str(input('Deseja voltar ao menu principal? (S) (N)\n')).upper()
-            if retorno_menu_principal == 'S':
-                return menu()
-            elif retorno_menu_principal == 'N':
-                print('Programa Finalizado!')
-            else:
-                print('Opção Inválida!')
+    # Opções de menu
+    retorno_menu_secundario = str(input('Deseja voltar ao menu anterior? (S) (N)\n')).upper()
+    if retorno_menu_secundario == 'S':
+        return menu_disciplinas()
+    elif retorno_menu_secundario == 'N':
+        retorno_menu_principal = str(input('Deseja voltar ao menu principal? (S) (N)\n')).upper()
+        if retorno_menu_principal == 'S':
+            return menu()
+        elif retorno_menu_principal == 'N':
+            print('Programa Finalizado!')
         else:
             print('Opção Inválida!')
+    else:
+        print('Opção Inválida!')
 
 # =======> GO
 menu()
