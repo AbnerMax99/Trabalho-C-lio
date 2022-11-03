@@ -11,44 +11,56 @@ CRUD universitário onde é possível cadastrar alunos, cursos e suas respectiva
 
 </div>
 
- - **ALUNOS**
-    - ✅ Incluir 
+ - ✅ **ALUNOS**
+    - Incluir 
         - RA -> str
         - Nome -> str
         - CPF -> str
         - ID do curso -> str
-    - ✅ Alterar 
+    - Alterar 
         - _Busca pelo RA_.
-    - ✅ Consultar pelo RA:
+    - Consultar pelo RA:
         - Exibir dados do aluno;
         - Exibir curso;
-        - Exibir disciplinas.
-    - ✅ Relatório Completo:
+        - Exibir disciplinas. ⚠️ PENDENTE
+    - Relatório Completo:
         - Exibir **todos** os alunos;
         - Exibir seus curso;
-        - Exibir suas disciplinas.
-    - ✅ Excluir:
+        - Exibir suas disciplinas. ⚠️ PENDENTE
+    - Excluir:
         - _A busca para exclusão do aluno deverá ser realizada por meio do RA_.
 
- - **CADASTRO DE CURSOS**
-    - ✅ Incluir
-        - ID -> int ⚠️ - REVISAR
+ - ✅ **CADASTRO DE CURSOS**
+    - Incluir
+        - ID do curso -> int 
         - Nome -> str
         - Duração (semestres) -> int
-    - ✅ Alterar:
-        - _Busca pelo ID_ ⚠️ - REVISAR
-    - ✅ Consultar pelo ID:
+    - Alterar:
+        - _Busca pelo ID do curso_ 
+    - Consultar pelo ID do curso:
         - Exibir dados do curso;
-        - Exibir disciplinas. ⚠️ - REVISAR
-    - ✅ Relatório: 
+        - Exibir disciplinas. ⚠️ PENDENTE
+    - Relatório: 
         - Exibir todos os cursos;
-        - Exibir todas as disciplinas. ⚠️ - REVISAR
+        - Exibir todas as disciplinas. ⚠️ PENDENTE
+    - Excluir:
+        - _A busca para exclusão do aluno deverá ser realizada por meio do ID do curso_.
     
  - **DISCIPLINAS**
     - Incluir:
         - ID;
         - Nome;
         - ID do curso.
+    - Alterar disciplina:
+        - _Busca pelo ID da disciplina_ 
+    - Consultar pelo ID:
+        - Exibir nome da disciplina;
+        - Exibir nome do curso. ⚠️ PENDENTE
+    - Relatório: 
+        - Exibir todos as disciplinas;
+        - Exibir todso os cursos. ⚠️ PENDENTE
+    - Excluir:
+        - _A busca para exclusão do aluno deverá ser realizada por meio do ID da disciplina_.
 
 
 ## Estrutura de _files_
@@ -71,4 +83,21 @@ No código, a primeira linha será utilizada como índice de linha para os dicio
 
 ___
 
-Authors: [Leonardo Espindola](https://github.com/HiLeomoreira) | [Abner Max](https://github.com/AbnerMax99)
+Authors: [Leonardo Espindola](https://github.com/HiLeomoreira) | [Abner Max
+](https://github.com/AbnerMax99) | [Vinicius Baldelli](https://github.com/ViniciusBaldelli)
+
+___
+
+    Pendencias
+
+    [ ] Os alunos só  devem aceitos os cursos previamente cadastrados
+    [ ] Os cursos precisam exibir todas as suas disciplinas
+    [ ] Disciplinas devem possuir ID
+    [ ] Disciplina deverá exibir seu curso
+
+___
+
+    Notas do commit
+
+    - Apenas organização do reposiótio
+    - Correção do bug em _students que impedia que as funções do módulo fossem executadas caso o arquivos files/students.py não fosse localizado

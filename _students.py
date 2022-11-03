@@ -13,17 +13,19 @@ def read_students() -> dict:
     # Estrutura de leitura do arquivo students.csv
     # 0 - RA | 1 - Nome | 2 - CPF | 3 - Curso
 
-    with open('files\students.csv', 'r') as students_table:
-        for text_line in students_table:
-            text_line = text_line.replace('\n', '')
-            student = text_line.split(';')
-            
-            students[student[0]] = dict()
-            students[student[0]]['name'] = student[1]
-            students[student[0]]['CPF'] = student[2]
-            students[student[0]]['course_id'] = student[3]
-
-    return students
+    try:
+        with open('files\students.csv', 'r') as students_table:
+            for text_line in students_table:
+                text_line = text_line.replace('\n', '')
+                student = text_line.split(';')
+                
+                students[student[0]] = dict()
+                students[student[0]]['name'] = student[1]
+                students[student[0]]['CPF'] = student[2]
+                students[student[0]]['course_id'] = student[3]
+            return students
+    except:
+        return students
 
 # =============================================================================
 
