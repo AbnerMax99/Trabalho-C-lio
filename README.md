@@ -54,11 +54,9 @@ CRUD universitário onde é possível cadastrar alunos, cursos e suas respectiva
     - Alterar disciplina:
         - _Busca pelo ID da disciplina_ 
     - Consultar pelo ID:
-        - Exibir nome da disciplina;
-        - Exibir nome do curso. ⚠️ PENDENTE
     - Relatório: 
         - Exibir todos as disciplinas;
-        - Exibir todso os cursos. ⚠️ PENDENTE
+        - Exibir todso os cursos
     - Excluir:
         - _A busca para exclusão do aluno deverá ser realizada por meio do ID da disciplina_.
 
@@ -87,17 +85,3 @@ Authors: [Leonardo Espindola](https://github.com/HiLeomoreira) | [Abner Max
 ](https://github.com/AbnerMax99) | [Vinicius Baldelli](https://github.com/ViniciusBaldelli)
 
 ___
-
-    Pendencias
-
-    [ ] Os alunos só  devem aceitos os cursos previamente cadastrados
-    [ ] Os cursos precisam exibir todas as suas disciplinas
-    [ ] Disciplinas devem possuir ID
-    [ ] Disciplina deverá exibir seu curso
-
-___
-
-    Notas do commit
-
-    - Apenas organização do reposiótio
-    - Correção do bug em _students que impedia que as funções do módulo fossem executadas caso o arquivos files/students.py não fosse localizado
