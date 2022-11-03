@@ -22,11 +22,11 @@ CRUD universitário onde é possível cadastrar alunos, cursos e suas respectiva
     - Consultar pelo RA:
         - Exibir dados do aluno;
         - Exibir curso;
-        - Exibir disciplinas. ⚠️ PENDENTE
+        - Exibir disciplinas.
     - Relatório Completo:
         - Exibir **todos** os alunos;
         - Exibir seus curso;
-        - Exibir suas disciplinas. ⚠️ PENDENTE
+        - Exibir suas disciplinas.
     - Excluir:
         - _A busca para exclusão do aluno deverá ser realizada por meio do RA_.
 
@@ -39,10 +39,10 @@ CRUD universitário onde é possível cadastrar alunos, cursos e suas respectiva
         - _Busca pelo ID do curso_ 
     - Consultar pelo ID do curso:
         - Exibir dados do curso;
-        - Exibir disciplinas. ⚠️ PENDENTE
+        - Exibir disciplinas.
     - Relatório: 
         - Exibir todos os cursos;
-        - Exibir todas as disciplinas. ⚠️ PENDENTE
+        - Exibir todas as disciplinas.
     - Excluir:
         - _A busca para exclusão do aluno deverá ser realizada por meio do ID do curso_.
     

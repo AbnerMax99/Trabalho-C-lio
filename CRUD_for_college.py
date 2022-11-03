@@ -242,6 +242,7 @@ def return_course() -> str:
     '''Exibe os dados de um curso'''
 
     global subjects
+
     skip_line()
 
     try:
@@ -253,7 +254,9 @@ def return_course() -> str:
         print(f'O curso selecionado foi: {curso[select_curso]}')
         print(f'Este curso possui: {duracao[select_curso]} semestre(s)')
         print(f'Este curso possui a(s) seguinte(s) disciplina(s): ')
-        print(', '.join(subjects[select_curso]))   #mostra as diciplinas do curso
+        print('Disciplinas: ')
+        for key in subjects[str(select_curso)].keys():
+            print(subjects[str(select_curso)][key])  #mostra as diciplinas do curso
         skip_line()
 
     except:
@@ -460,20 +463,20 @@ def all_subjects() -> str: #Relatório das disciplinas a qual deve mostrar : Dis
         for id_subjects in subjects[id_course].keys():
             print(id_subjects, ' - ', subjects[id_course][id_subjects])
 
-            # Opções de menu
-        retorno_menu_secundario = str(input('Deseja voltar ao menu anterior? (S) (N)\n')).upper()
-        if retorno_menu_secundario == 'S':
-            return menu_disciplinas()
-        elif retorno_menu_secundario == 'N':
-            retorno_menu_principal = str(input('Deseja voltar ao menu principal? (S) (N)\n')).upper()
-            if retorno_menu_principal == 'S':
-                return menu()
-            elif retorno_menu_principal == 'N':
-                print('Programa Finalizado!')
-            else:
-                print('Opção Inválida!')
+    # Opções de menu
+    retorno_menu_secundario = str(input('Deseja voltar ao menu anterior? (S) (N)\n')).upper()
+    if retorno_menu_secundario == 'S':
+        return menu_disciplinas()
+    elif retorno_menu_secundario == 'N':
+        retorno_menu_principal = str(input('Deseja voltar ao menu principal? (S) (N)\n')).upper()
+        if retorno_menu_principal == 'S':
+            return menu()
+        elif retorno_menu_principal == 'N':
+            print('Programa Finalizado!')
         else:
             print('Opção Inválida!')
+    else:
+        print('Opção Inválida!')
 
 def excluir_disciplina() -> None:
     '''Apaga uma disciplina'''
@@ -489,7 +492,7 @@ def excluir_disciplina() -> None:
         select_curso = course_id.index(int(input('Insira o ID do curso: ')))  #Seleção do curso pelo ID
         print(f'O Curso selecionado foi {curso[select_curso]}')
         
-        id_subject = str((input('Digite a disciplina que deseja alterar: ')))
+        id_subject = str((input('Digite o ID da disciplina: ')))
         try:
             print(f'Disciplina selecionada foi: {subjects[str(select_curso)][id_subject]}')
             confirm = str(input('Confirmar Exclusão? (S) (N)'))
