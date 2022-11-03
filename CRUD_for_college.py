@@ -369,10 +369,10 @@ def incluir_disciplina() -> None:
         subjectc_name = str(input('Qual disciplina deseje inserir?\n: ')) #Inserção da disciplina no curso selecionado
 
         try:
-            subjects[select_curso].append(subjectc_name)
+            subjects[str(select_curso)][str(generate_course_id())] = subjectc_name
         except:
-            subjects[select_curso] = list()
-            subjects[select_curso].append(subjectc_name)
+            subjects[str(select_curso)] = dict()
+            subjects[str(select_curso)][str(generate_course_id())] = subjectc_name
 
         print('Disciplina Inserido!')
 
@@ -456,9 +456,9 @@ def all_subjects() -> str: #Relatório das disciplinas a qual deve mostrar : Dis
 
     global subjects, course_id, curso
 
-    for i in course_id:
-        print("ID do curso: ", i)
-        print("Disciplinas: ", subjects[int(i)])
+    for id_course in subjects.keys():
+        for id_subjects in subjects[id_course].keys():
+            print(subjects[id_course][id_subjects])
 
             # Opções de menu
         retorno_menu_secundario = str(input('Deseja voltar ao menu anterior? (S) (N)\n')).upper()
